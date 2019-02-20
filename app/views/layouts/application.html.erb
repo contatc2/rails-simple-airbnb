@@ -13,6 +13,26 @@
   </head>
 
   <body>
-    <%= yield %>
+    <div class="d-flex justify-content-between py-3 px-5 bg-light">
+      <%= link_to "all flats", flats_path, class: 'text-decoration-none text-secondary'  %>
+
+      <div class="d-flex">
+        <form action="/flats" class="form-inline">
+          <input type="text" name="search" value="<%= @query %>" class="form-control">
+          <input type="submit" class="btn btn-success">
+        </form>
+
+        <%= link_to "add a new flat", new_flat_path, class: 'text-decoration-none text-secondary'  %>
+
+      </div>
+    </div>
+
+    <div class="container">
+
+      <%= yield %>
+
+    </div>
+
+
   </body>
 </html>
